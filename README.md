@@ -36,17 +36,26 @@ a.	cat filename1 | cat filename2
 it will list the content of both files
 ```
 b.	ls | rm
-
+```
+This will try to execute rm with no arguments, which will fail because rm needs filenames to delete.
+```
 c.	ls /etc/passwd | wc –l
-
+```
+This will return 1 because ls will just output /etc/passwd, and wc -l will count this as one line.
+```
 10.	Create a bash shell alias named ls for the “ls –l” command
 
 11.	List the user commands and redirect the output to /tmp/commands.list
+![Screenshot from 2024-10-05 10-47-13](https://github.com/user-attachments/assets/481d61fa-bd7a-49a5-a30a-63ea849a65ff)
 
 12.	Get all the users names whose first character in their login is ‘g’.
+![Screenshot from 2024-10-05 10-47-39](https://github.com/user-attachments/assets/cc96bb84-0d7a-4192-93eb-1e50ebc4a599)
 
 13.	Write two commands: first: to search for all files on the system that named .bash_profile. Second: sorts the output of ls command on / recursively, Saving their output and error in 2 different files and sending them to the background.
-
+```
+find / -name ".bash_profile"
+ls -R / > output.txt 2> error.txt &
+```
 14.	Display lines 7 to line 10 of /etc/passwd file
 
 ![Screenshot from 2024-10-05 10-09-33](https://github.com/user-attachments/assets/62eeac01-5016-458d-86c1-319ef5aaed6c)
@@ -66,14 +75,36 @@ c.	ls /etc/passwd | wc –l
 ![Screenshot from 2024-10-05 10-10-15](https://github.com/user-attachments/assets/7c5ff7da-8d58-4032-933a-0b48aae16f72)
 
 19.	What is the difference between startup files and initialization files?
+```
+    Startup files are executed when a shell starts. These include /etc/profile, ~/.bash_profile, and ~/.bashrc (for bash).
+    Initialization files set up the environment, paths, and other configurations for your shell.
 
+Startup file of bash:
+
+    /etc/profile
+    ~/.bash_profile
+    ~/.bash_login
+    ~/.profile
+
+Initialization file of bash:
+
+    ~/.bashrc
+```
 20.	State the startup file of: bash.
+```
+/etc/profile
+~/.bash_profile
+~/.bash_login
+~/.profile
+```
+22.	State the initialization file of:  bash.
+```
+~/.bashrc
+```
+23.	Edit in your profile to display date at login and change your prompt permanently.
+![Screenshot from 2024-10-05 10-44-47](https://github.com/user-attachments/assets/bfaf186e-ad7e-4fea-96dd-8ebf5357966f)
 
-21.	State the initialization file of:  bash.
-
-22.	Edit in your profile to display date at login and change your prompt permanently.
-
-23.	Execute the following command :
+24.	Execute the following command :
 
 echo \   then  press enter
 
